@@ -25,6 +25,7 @@ class EriMap extends Component {
         this.handleZoomIn = this.handleZoomIn.bind(this)
         this.handleZoomOut = this.handleZoomOut.bind(this)
         this.loadPaths = this.loadPaths.bind(this)
+        this.onWheel = this.onWheelEvent.bind(this)
     }
     componentDidMount() {
         this.loadPaths()
@@ -62,15 +63,38 @@ class EriMap extends Component {
             this.setState({ geographyPaths })
           })
     }
+
+    onWheelEvent(deltaMode, x, y, z) {
+        //alert(deltaMode + " " + x +" " + y + " " + z);
+        //debugger;
+        if( deltaMode.deltaY > 0)
+        {
+            this.setState({
+                zoom: this.state.zoom / 2,
+            })
+        }
+        else
+        {
+            this.setState({
+                zoom: this.state.zoom * 2,
+            })
+        }
+        
+    }
     render() {
         return (
-            <div>
+            <div >
                 <button onClick={ this.handleZoomIn }>{ "Zoom in" }</button>
                 <button onClick={ this.handleZoomOut }>{ "Zoom out" }</button>
                 <hr />
-                <ComposableMap projection="miller">
-                    <ZoomableGroup zoom={ this.state.zoom } onMoveStart={this.handleMoveStart}
-  onMoveEnd={this.handleMoveEnd}>
+                <div onWheel={this.onWheel}>
+                
+                <ComposableMap projection="miller"  >
+                    <ZoomableGroup 
+                        zoom={ this.state.zoom } 
+                        onMoveStart={this.handleMoveStart}
+                        onMoveEnd={this.handleMoveEnd}
+                        >
                         <Geographies geography={ this.state.geographyPaths} disableOptimization>
                             {(geographies, projection) => geographies.map((geography, i) => (
                                 <Geography
@@ -92,6 +116,7 @@ class EriMap extends Component {
                         </Geographies>
                     </ZoomableGroup>
                 </ComposableMap>
+                </div>
             </div>
         );
     }
