@@ -1,0 +1,16 @@
+.dataset_body{
+    padding: 0px 20px;
+}
+.dropzone {
+    border: 2px dashed #AAA;
+    font-size: 14px;
+    font-style: italic;
+    padding: 0 10px;
+}
+.dropzone p {
+    
+}
+.dataset {
+    border: 2px double #888;
+    margin: 20px 0;
+}

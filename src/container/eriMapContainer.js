@@ -1,17 +1,10 @@
 import { connect } from 'react-redux'
 import EriMap from "../component/eriMap";
-import {upload} from '../actions'
 
 const mapStateToPros = (state) => {
     return {
-        counter: state
+        points: state.markers
     };
 };
 
-const mapDispatchToPros = (dispatch) => {
-    return {
-        upload: () => dispatch(upload()),
-    };
-};
-
-export default connect(mapStateToPros, mapDispatchToPros)(EriMap)
+export default connect(mapStateToPros)(EriMap)

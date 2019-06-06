@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -25,11 +25,13 @@ path:focus {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  width: 20%;
+  display: inline-block;
+  background-color: white;
+  float: left;
+}
+.mapcontainer {
+  width: 80%;
+  display: inline-block;
 }
