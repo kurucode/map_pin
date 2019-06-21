@@ -68,8 +68,8 @@ class DataSet extends Component {
                 <b>Current DataSet</b>
                 <div style={{ height: 400 }}>
                     <SortableTree
-                    treeData= {this.state.treeData}
-                    onChange={treeData => this.setState({ treeData })}
+                    treeData= {markers}
+                    
                     theme={FileExplorerTheme}
                     ></SortableTree>
                 </div>

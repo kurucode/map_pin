@@ -98,12 +98,12 @@
 
 // export default EriMap;
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, Circle } from 'google-maps-react';
 import '../App.css'
 import { addPoint } from '../actions';
 
 const mapStyles = {
-  width: '80%',
+  width: '100%',
   height: '100%',
   position: 'fixed'
 };
@@ -111,54 +111,32 @@ const mapStyles = {
 export class EriMap extends Component {
     constructor(props) {
         super(props);
-        this.onClick = this.onClickEvent.bind(this);
       }
    
-    onClickEvent(t, map, coord) {
-        const {dispatch} = this.props;
-        const { latLng } = coord;
-        const lat = latLng.lat();
-        const lng = latLng.lng();
-        // this.setState(prevState  => {
-        //   return {
-        //     markers: [
-        //       ...prevState.markers,
-        //       {
-        //         title: "GGGGG",
-        //         name: "wwww",
-        //         position: { lat, lng }
-        //       }
-        //     ]
-        //   };
-        // });
-        var point = {
-          title: "GGGGG",
-          name: "bbbbbb",
-          position: {lat, lng}
-        }
-        dispatch(addPoint(point));
-      }
+
   render() {
     const {points} = this.props
 
     return (
             <Map 
                 google={this.props.google}
-                zoom={4}
+                zoom={6}
                 style={mapStyles}
-                    initialCenter={{
-                    lat: 45,
-                    lng: 0
+                initialCenter={{
+                  lat: 8,
+                  lng: 105
                 }}
-                onClick={this.onClick}
                 >
                     {points.map((marker, index) => (
                         <Marker
                             key={index}
                             title={marker.title}
-                            name={marker.name}
+                            name={marker.name }
                             position={marker.position}
+                            draggable={true}
+                            icon="favicon.ico"
                         />
+                        
                     ))}
             </Map>
     );
@@ -167,6 +145,6 @@ export class EriMap extends Component {
 
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyD9JEJVrEYFZthQ1_JFJH_2RQFVSZab-Ks'
+  apiKey: 'AIzaSyBUrb3CdVhj3KVdMtf2O7liPhHKJKgMBxY'
 })(EriMap);
 
