@@ -1,102 +1,103 @@
-// import React, {Component} from 'react'
-// import ReactDOM from 'react-dom'
-// // imports maps lib
-// import {
-//     ComposableMap,
-//     ZoomableGroup,
-//     Geographies,
-//     Geography,
-//     Markers, Marker,
-//     Annotations, Annotation
-//   } from "react-simple-maps"
+/*import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
+// imports maps lib
+import {
+    ComposableMap,
+    ZoomableGroup,
+    Geographies,
+    Geography,
+    Markers, Marker,
+    Annotations, Annotation
+  } from "react-simple-maps"
 
-// class EriMap extends Component {
+class EriMap extends Component {
     
-//     constructor() {
-//         super()
+    constructor() {
+        super()
     
-//         this.state = {
-//           zoom: 1,
-//           geographyPaths: [],
+        this.state = {
+          zoom: 1,
+          geographyPaths: [],
 
-//         }
+        }
     
-//         this.handleZoomIn = this.handleZoomIn.bind(this)
-//         this.handleZoomOut = this.handleZoomOut.bind(this)
-//         this.onWheel = this.onWheelEvent.bind(this)
-//     }
+        this.handleZoomIn = this.handleZoomIn.bind(this)
+        this.handleZoomOut = this.handleZoomOut.bind(this)
+        this.onWheel = this.onWheelEvent.bind(this)
+    }
 
-//     handleZoomIn() {
-//         this.setState({
-//             zoom: this.state.zoom * 2,
-//         })
-//     }
+    handleZoomIn() {
+        this.setState({
+            zoom: this.state.zoom * 2,
+        })
+    }
 
-//     handleZoomOut() {
-//         this.setState({
-//             zoom: this.state.zoom / 2,
-//         })
-//     }
+    handleZoomOut() {
+        this.setState({
+            zoom: this.state.zoom / 2,
+        })
+    }
 
-//     onWheelEvent(delta) {
-//         if( delta.deltaY > 0)
-//         {
-//             this.setState({
-//                 zoom: this.state.zoom / 2,
-//             })
-//         }
-//         else
-//         {
-//             this.setState({
-//                 zoom: this.state.zoom * 2,
-//             })
-//         }
+    onWheelEvent(delta) {
+        if( delta.deltaY > 0)
+        {
+            this.setState({
+                zoom: this.state.zoom / 2,
+            })
+        }
+        else
+        {
+            this.setState({
+                zoom: this.state.zoom * 2,
+            })
+        }
         
-//     }
-//     render() {
-//         return (
-//             <div >
-//                 <button onClick={ this.handleZoomIn }>{ "Zoom in" }</button>
-//                 <button onClick={ this.handleZoomOut }>{ "Zoom out" }</button>
-//                 <hr />
+    }
+    render() {
+        return (
+            <div >
+                <button onClick={ this.handleZoomIn }>{ "Zoom in" }</button>
+                <button onClick={ this.handleZoomOut }>{ "Zoom out" }</button>
+                <hr />
 
-//                 <div onWheel={this.onWheel}>
+                <div onWheel={this.onWheel}>
                 
-//                 <ComposableMap projection="miller"  >
-//                     <ZoomableGroup 
-//                         zoom={ this.state.zoom } 
-//                         >
-//                         <Geographies geography={"/mapJsons/us.json"} disableOptimization>
-//                             {(geographies, projection) => geographies.map((geography, i) => (
-//                                 <Geography
-//                                     key={i}
-//                                     geography={ geography }
-//                                     projection={ projection }
-//                                     style={{
-//                                         default: {
-//                                             fill: "#666",
-//                                             stroke: "#FFF",
-//                                             strokeWidth: 0.1,
-//                                             outline: "none",
-//                                         },
-//                                         hover:   { fill: "#999"},
-//                                         pressed: { fill: "#FFF",  },
-//                                     }}
-//                                 />
-//                             ))}
+                <ComposableMap projection="miller"  >
+                    <ZoomableGroup 
+                        zoom={ this.state.zoom } 
+                        >
+                        <Geographies geography={"/mapJsons/us.json"} disableOptimization>
+                            {(geographies, projection) => geographies.map((geography, i) => (
+                                <Geography
+                                    key={i}
+                                    geography={ geography }
+                                    projection={ projection }
+                                    style={{
+                                        default: {
+                                            fill: "#666",
+                                            stroke: "#FFF",
+                                            strokeWidth: 0.1,
+                                            outline: "none",
+                                        },
+                                        hover:   { fill: "#999"},
+                                        pressed: { fill: "#FFF",  },
+                                    }}
+                                />
+                            ))}
 
                             
-//                         </Geographies>
+                        </Geographies>
                         
-//                     </ZoomableGroup>
-//                 </ComposableMap>
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
+                    </ZoomableGroup>
+                </ComposableMap>
+                </div>
+            </div>
+        );
+    }
+}
 
-// export default EriMap;
+ export default EriMap;*/
+ 
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, Circle } from 'google-maps-react';
 import '../App.css'
