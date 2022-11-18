@@ -11,7 +11,7 @@
     "react-google-maps": "^9.4.5",
     "react-leaflet": "^2.3.0",
     "react-redux": "^7.0.3",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-sortable-tree": "^2.6.2",
     "react-sortable-tree-theme-file-explorer": "^2.0.0",
     "read-excel-file": "^4.0.1",
